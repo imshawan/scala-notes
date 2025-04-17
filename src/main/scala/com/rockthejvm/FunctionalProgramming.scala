@@ -101,6 +101,11 @@ object FunctionalProgramming extends App {
   val prependedList = 0 :: list // similar to pushing element to first, returns List(0,1,2,3,4)
   val anExtendedList = 0 +: list :+ 5 // returns List(0,1,2,3,4,5)
 
+  val maxNumber = list.reduce(_ max _)
+  val minNumber = list.reduce(_ min _)
+  val added = list.reduce((a, b) => a + b)
+  val addedWithInitialValue = list.fold(0)((a, b) => a + b)
+
   // Sequences
   val sequence: Seq[Int] = Seq(1,2,3) //  Seq.apply(1,2,3)
   val accessedElements = sequence.apply(1) // the element at index 1
